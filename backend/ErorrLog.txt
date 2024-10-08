@@ -1,0 +1,198 @@
+
+23-05-21 20:52:45  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'Values FROM Outputs WHERE Name = 'Alert countdown time'' at line 1 
+23-05-21 20:52:56  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'Values FROM Outputs WHERE Name = 'Alert countdown time'' at line 1 
+23-05-21 20:53:38  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'Values FROM Outputs WHERE Name = 'Alert countdown time'' at line 1 
+23-05-21 22:54:37  Error: Read output digital pin from database 
+23-05-21 22:54:40  Error: Read output digital pin from database 
+23-05-21 22:54:44  Error: Read output digital pin from database 
+23-05-21 22:54:45  Error: Read output digital pin from database 
+23-05-21 22:54:45  Error: Read output digital pin from database 
+23-05-21 22:54:45  Error: Read output digital pin from database 
+23-05-21 22:54:46  Error: Read output digital pin from database 
+23-05-21 22:54:47  Error: Read output digital pin from database 
+23-05-21 22:55:05  Error: Read output digital pin from database 
+23-05-21 23:02:43  Error: Read output digital pin from database 
+23-05-21 23:04:07  Error: Read output digital pin from database 
+23-05-21 23:04:10  Error: Read output digital pin from database 
+23-05-21 23:05:20  Error: Read output digital pin from database 
+23-05-21 23:05:24  Error: Read output digital pin from database 
+23-05-23 11:53:21  Duplicate entry '3' for key 'AreaID' 
+23-05-23 12:05:40  Unknown column 'Garaz' in 'where clause' 
+23-05-23 16:14:59  Error: Read output digital pin from database 
+23-05-23 16:15:26  Error: Read output digital pin from database 
+23-05-23 17:01:19  Error: Read output digital pin from database 
+23-05-23 17:01:24  Error: Read output digital pin from database 
+23-05-23 17:01:30  Error: Read output digital pin from database 
+23-05-23 17:13:14  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''\')' at line 1 
+23-05-31 14:18:35  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'alarm OFF' at line 1 
+23-05-31 14:19:33  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'alarm OFF' at line 1 
+23-05-31 14:20:09  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'alarm OFF' at line 1 
+23-05-31 14:20:09  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'alarm ON' at line 1 
+23-05-31 14:20:09  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'gate' at line 1 
+23-05-31 14:28:47  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'alarm OFF' at line 1 
+23-05-31 14:28:47  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'alarm ON' at line 1 
+23-05-31 14:28:47  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'gate' at line 1 
+23-05-31 17:24:55  Error: Read output digital pin from database 
+23-05-31 17:24:55  Error: Read output digital pin from database 
+23-05-31 17:25:00  Error: Read output digital pin from database 
+23-05-31 17:25:00  Error: Read output digital pin from database 
+23-05-31 17:39:06  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'Sirens', 'GateSwitch')'' at line 1 
+23-05-31 17:39:32  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'Sirens', 'GateSwitch')'' at line 1 
+23-05-31 17:40:17  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'Sirens', 'GateSwitch')'' at line 1 
+23-05-31 17:41:31  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'Sirens', 'GateSwitch')'' at line 1 
+23-05-31 17:41:38  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'Sirens', 'GateSwitch')'' at line 1 
+23-05-31 17:42:07  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'Sirens', 'GateSwitch')'' at line 1 
+23-05-31 17:42:49  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'Sirens', 'GateSwitch')'' at line 1 
+23-05-31 17:43:07  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'Sirens', 'GateSwitch')'' at line 1 
+23-05-31 18:15:43  Unknown column 'arg' in 'where clause' 
+23-05-31 18:16:34  Unknown column 'arg' in 'where clause' 
+23-05-31 18:17:36  Unknown column 'arg' in 'where clause' 
+23-05-31 18:18:53  Unknown column 'arg' in 'where clause' 
+23-05-31 18:19:36  Unknown column 'arg' in 'where clause' 
+23-05-31 20:55:31  Error: Read output digital pin from database 
+23-05-31 20:55:33  Error: Read output digital pin from database 
+23-05-31 20:55:54  Error: Read output digital pin from database 
+23-05-31 20:56:52  Error: Read output digital pin from database 
+23-05-31 20:56:54  Error: Read output digital pin from database 
+23-06-02 20:06:41  Error: Read output digital pin from database 
+23-06-02 20:06:49  Error: Read output digital pin from database 
+23-06-02 20:07:41  Error: Read output digital pin from database 
+23-06-06 19:09:38  Table 'homedb.NightMode' doesn't exist 
+23-06-06 19:09:47  Table 'homedb.NightMode' doesn't exist 
+23-06-06 22:26:31  Unknown column 'unsecured' in 'field list' 
+23-06-06 22:26:31  Unknown column 'unsecured' in 'field list' 
+23-06-06 22:26:31  Unknown column 'unsecured' in 'field list' 
+23-06-06 22:26:31  Unknown column 'unsecured' in 'field list' 
+23-06-06 22:26:31  Unknown column 'unsecured' in 'field list' 
+23-06-06 22:26:31  Unknown column 'unsecured' in 'field list' 
+23-06-06 22:26:31  Unknown column 'unsecured' in 'field list' 
+23-06-06 22:26:31  Unknown column 'unsecured' in 'field list' 
+23-06-15 15:34:36  Unknown column 'Status' in 'field list' 
+23-06-15 15:34:57  Unknown column 'Status' in 'field list' 
+23-06-15 16:04:33  Unknown column 'sdsd' in 'field list' 
+23-06-15 16:04:58  Unknown column 'sdsd' in 'field list' 
+23-06-15 19:26:28  Error: Read output digital pin from database 
+23-06-15 19:27:36  Error: Read output digital pin from database 
+23-06-15 19:29:38  Error: Read output digital pin from database 
+23-06-16 11:38:59  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'gate open']'' at line 1 
+23-06-16 11:39:09  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'gate open', 'gate close']'' at line 1 
+23-06-16 11:40:08  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'gate open', 'gate close']'' at line 1 
+23-06-16 11:40:22  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'gate open', 'gate close']'' at line 1 
+23-06-16 11:40:32  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'gate open', 'gate close']'' at line 1 
+23-06-16 11:41:03  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'gate open', 'gate close']'' at line 1 
+23-06-16 11:41:21  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'gate open', 'gate close']'' at line 1 
+23-06-16 11:43:32  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'gate open']'' at line 1 
+23-06-16 11:43:47  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'gate open']'' at line 1 
+23-06-27 19:46:39  This version of MariaDB doesn't yet support 'LIMIT & IN/ALL/ANY/SOME subquery' 
+23-06-27 19:47:21  This version of MariaDB doesn't yet support 'LIMIT & IN/ALL/ANY/SOME subquery' 
+23-06-27 19:47:40  This version of MariaDB doesn't yet support 'LIMIT & IN/ALL/ANY/SOME subquery' 
+23-07-19 00:21:51  Unknown column 'ahoj' in 'field list' 
+23-07-19 00:23:34  Unknown column 'll' in 'field list' 
+23-07-19 10:15:43  Column count doesn't match value count at row 1 
+23-07-19 10:15:58  Column count doesn't match value count at row 1 
+23-07-19 10:16:09  Column count doesn't match value count at row 1 
+23-07-19 10:56:47  Table 'homedb.Areass' doesn't exist 
+23-07-19 10:56:57  Table 'homedb.Areass' doesn't exist 
+23-07-19 10:57:21  Table 'homedb.Areass' doesn't exist 
+23-07-20 15:39:29  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= (SELECT AreaID FROM Nightmode)' at line 1 
+23-07-20 16:07:11  Unknown column 'AreaID' in 'field list' 
+23-07-20 16:07:14  Unknown column 'AreaID' in 'field list' 
+23-07-20 16:07:18  Unknown column 'AreaID' in 'field list' 
+23-07-20 16:07:22  Unknown column 'AreaID' in 'field list' 
+23-07-20 16:07:32  Unknown column 'AreaID' in 'field list' 
+23-07-20 16:07:38  Unknown column 'AreaID' in 'field list' 
+23-07-20 16:07:40  Unknown column 'AreaID' in 'field list' 
+23-07-20 16:07:45  Unknown column 'AreaID' in 'field list' 
+23-07-20 16:07:55  Unknown column 'AreaID' in 'field list' 
+23-07-20 19:57:49  Unknown column 'AreaID' in 'field list' 
+23-07-20 19:57:54  Unknown column 'AreaID' in 'field list' 
+23-07-20 19:58:18  Unknown column 'AreaID' in 'field list' 
+23-07-20 19:58:20  Unknown column 'AreaID' in 'field list' 
+23-07-20 19:58:23  Unknown column 'AreaID' in 'field list' 
+23-07-20 20:00:10  Unknown column 'AreaID' in 'field list' 
+23-07-20 20:00:17  Unknown column 'AreaID' in 'field list' 
+23-07-20 20:00:25  Unknown column 'AreaID' in 'field list' 
+23-07-20 20:00:33  Unknown column 'AreaID' in 'field list' 
+23-07-20 20:00:41  Unknown column 'AreaID' in 'field list' 
+23-07-20 20:00:48  Unknown column 'AreaID' in 'field list' 
+23-07-20 20:01:08  Unknown column 'AreaID' in 'field list' 
+23-07-20 20:02:16  Unknown column 'AreaID' in 'field list' 
+23-07-20 20:02:21  Unknown column 'AreaID' in 'field list' 
+23-07-20 20:02:37  Unknown column 'AreaID' in 'field list' 
+23-07-20 20:02:40  Unknown column 'AreaID' in 'field list' 
+23-07-20 20:02:42  Unknown column 'AreaID' in 'field list' 
+23-07-20 20:02:55  Unknown column 'AreaID' in 'field list' 
+23-07-20 20:02:59  Unknown column 'AreaID' in 'field list' 
+23-07-20 20:03:02  Unknown column 'AreaID' in 'field list' 
+23-07-20 20:03:16  Unknown column 'AreaID' in 'field list' 
+23-07-20 20:03:29  Unknown column 'AreaID' in 'field list' 
+23-07-20 20:05:10  Unknown column 'AreaID' in 'field list' 
+23-07-20 20:05:17  Unknown column 'AreaID' in 'field list' 
+23-07-20 20:05:24  Unknown column 'AreaID' in 'field list' 
+23-07-20 20:06:08  Unknown column 'AreaID' in 'field list' 
+23-07-20 20:12:38  Unknown column 'AreaID' in 'field list' 
+23-07-20 20:13:10  Unknown column 'AreaID' in 'field list' 
+23-07-20 20:13:19  Unknown column 'AreaID' in 'field list' 
+23-07-20 20:13:47  Unknown column 'AreaID' in 'field list' 
+23-07-20 20:13:51  Unknown column 'AreaID' in 'field list' 
+23-07-20 20:13:58  Unknown column 'AreaID' in 'field list' 
+23-07-20 20:14:07  Unknown column 'AreaID' in 'field list' 
+23-07-20 20:14:43  Unknown column 'AreaID' in 'field list' 
+23-07-20 20:14:48  Unknown column 'AreaID' in 'field list' 
+23-07-20 20:15:24  Unknown column 'AreaID' in 'field list' 
+23-07-20 20:15:44  Unknown column 'AreaID' in 'field list' 
+23-07-20 20:15:53  Unknown column 'AreaID' in 'field list' 
+23-07-20 20:16:13  Unknown column 'AreaID' in 'field list' 
+23-07-25 21:13:48  Unknown column 'AreaID' in 'field list' 
+23-07-25 21:13:59  Unknown column 'AreaID' in 'field list' 
+23-07-25 21:14:16  Unknown column 'AreaID' in 'field list' 
+23-07-25 21:23:43  Unknown column 'AreaID' in 'field list' 
+23-07-25 21:23:46  Unknown column 'AreaID' in 'field list' 
+23-07-25 21:23:49  Unknown column 'AreaID' in 'field list' 
+23-07-25 21:23:57  Unknown column 'AreaID' in 'field list' 
+23-07-25 21:24:21  Unknown column 'AreaID' in 'field list' 
+23-07-25 21:24:29  Unknown column 'AreaID' in 'field list' 
+23-07-25 21:24:36  Unknown column 'AreaID' in 'field list' 
+23-07-25 21:24:39  Unknown column 'AreaID' in 'field list' 
+23-07-25 21:24:48  Unknown column 'AreaID' in 'field list' 
+23-07-25 21:25:44  Unknown column 'AreaID' in 'field list' 
+23-07-26 16:36:25  Unknown column 'AreaID' in 'field list' 
+23-07-26 16:36:41  Unknown column 'AreaID' in 'field list' 
+23-07-26 16:42:38  Unknown column 'AreaID' in 'field list' 
+23-07-26 16:47:15  Unknown column 'AreaID' in 'field list' 
+23-07-26 17:01:48  Unknown column 'AreaID' in 'field list' 
+23-07-26 17:08:45  Unknown column 'AreaID' in 'field list' 
+23-07-26 17:09:34  Unknown column 'AreaID' in 'field list' 
+23-07-26 17:11:31  Unknown column 'AreaID' in 'field list' 
+23-07-26 17:24:53  Unknown column 'AreaID' in 'field list' 
+23-07-26 17:25:15  Unknown column 'AreaID' in 'field list' 
+23-07-26 17:27:33  Unknown column 'AreaID' in 'field list' 
+23-07-26 17:40:22  Unknown column 'AreaID' in 'field list' 
+23-07-26 17:40:33  Unknown column 'AreaID' in 'field list' 
+23-07-26 17:40:41  Unknown column 'AreaID' in 'field list' 
+23-07-26 17:40:45  Unknown column 'AreaID' in 'field list' 
+23-07-26 17:40:53  Unknown column 'AreaID' in 'field list' 
+23-07-26 17:44:48  Unknown column 'AreaID' in 'field list' 
+23-07-26 17:45:23  Unknown column 'AreaID' in 'field list' 
+23-07-26 17:45:33  Unknown column 'AreaID' in 'field list' 
+23-07-26 17:45:35  Unknown column 'AreaID' in 'field list' 
+23-07-26 17:45:56  Unknown column 'AreaID' in 'field list' 
+23-07-26 17:45:59  Unknown column 'AreaID' in 'field list' 
+23-07-26 17:46:37  Unknown column 'AreaID' in 'field list' 
+23-07-26 17:46:41  Unknown column 'AreaID' in 'field list' 
+23-07-26 17:56:54  Unknown column 'AreaID' in 'field list' 
+23-07-26 17:57:56  Unknown column 'AreaID' in 'field list' 
+23-07-26 17:59:57  Unknown column 'AreaID' in 'field list' 
+23-07-26 18:00:20  Unknown column 'AreaID' in 'field list' 
+23-07-26 18:00:29  Unknown column 'AreaID' in 'field list' 
+23-07-26 18:00:34  Unknown column 'AreaID' in 'field list' 
+23-07-26 18:57:45  Unknown column 'AreaID' in 'field list' 
+23-07-26 18:59:03  Unknown column 'AreaID' in 'field list' 
+23-07-26 18:59:17  Unknown column 'AreaID' in 'field list' 
+23-07-26 19:03:36  Unknown column 'AreaID' in 'field list' 
+23-07-26 19:04:18  Unknown column 'AreaID' in 'field list' 
+23-07-26 19:05:02  Unknown column 'AreaID' in 'field list' 
+23-07-26 19:05:16  Unknown column 'AreaID' in 'field list' 
+23-09-09 15:58:09  Unknown column 'Name' in 'where clause' 
+23-09-09 15:58:36  Unknown column 'Name' in 'where clause' 
+23-09-09 15:59:12  Unknown column 'Name' in 'where clause' 
