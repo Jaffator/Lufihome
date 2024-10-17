@@ -292,7 +292,7 @@ export default {
 };
 </script>
 <style>
-.v-data-table-footer {
+/* .v-data-table-footer {
   display: None;
-}
+} */
 </style>

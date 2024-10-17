@@ -1,12 +1,10 @@
 <template>
   <!------------ Dialog ----------->
   <Dialog v-model="errorDialog" :dialogtext="errorDialogtext" :color="dialogColor"></Dialog>
-  <!--CARD AREA EDIT------------------------------------------------------------------------------------------------------------------->
-  <!--  -->
-  <v-col cols="12" sm="4">
+
     <v-container class="pa-1">
-      <v-card max-width="500">
-        <v-data-table :headers="headers" :items="sensors" :sort-by="[{ key: 'Name', order: 'asc' }]">
+      <v-card max-width="550">
+        <v-data-table :headers="headers" :items="sensors" items-per-page="5" :sort-by="[{ key: 'DigitalPin', order: 'asc' }]">
           <template v-slot:top>
             <v-toolbar flat color="indigo-darken-4">
               <v-icon class="ml-3" icon="mdi mdi-motion-sensor"></v-icon>
@@ -58,11 +56,11 @@
             <v-icon size="small" class="ml-2" @click="editItem(item)"> mdi-pencil </v-icon>
             <v-icon size="small" class="ml-2" @click="deleteItem(item)"> mdi-delete </v-icon>
           </template>
-          <template v-slot:no-data> </template>
+          <template v-slot:footer> </template>
         </v-data-table>
       </v-card>
     </v-container>
-  </v-col>
+  
 </template>
 <script>
 import { mapState } from "vuex";
@@ -222,7 +220,7 @@ export default {
 };
 </script>
 <style>
-.v-data-table-footer {
-  display: None;
-}
+/* .v-data-table-footer {
+  display: inline;
+} */
 </style>

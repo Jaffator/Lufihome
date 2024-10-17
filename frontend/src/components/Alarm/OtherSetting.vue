@@ -1,8 +1,8 @@
 <template>
   <Dialog v-model="errorDialog" :dialogtext="errorDialogtext" :color="dialogColor"></Dialog>
-  <v-col cols="12" sm="4">
+
     <v-container class="pa-1">
-      <v-card elevation="5" max-width="500">
+      <v-card elevation="5" max-width="550">
         <v-toolbar dark color="indigo-darken-4">
           <v-toolbar-title> <v-icon class="mr-4" icon="mdi mdi-tune-variant"></v-icon>Others</v-toolbar-title>
           <v-btn color="grey-lighten-1" @click="save()"> Save </v-btn>
@@ -19,7 +19,7 @@
         </v-container>
       </v-card>
     </v-container>
-  </v-col>
+
 </template>
 <script>
 import Dialog from "../../components/Dialog.vue";

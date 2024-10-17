@@ -3,9 +3,8 @@
   <Dialog v-model="errorDialog" :dialogtext="errorDialogtext" :color="dialogColor"></Dialog>
   <!--CARD AREA EDIT------------------------------------------------------------------------------------------------------------------->
   <!--  -->
-  <v-col cols="12" sm="4">
     <v-container class="pa-1">
-      <v-card max-width="500">
+      <v-card max-width="550">
         <v-data-table :headers="headers" :items="outputs" :sort-by="[{ key: 'Name', order: 'asc' }]">
           <template v-slot:top>
             <v-toolbar flat color="indigo-darken-4">
@@ -59,7 +58,6 @@
         </v-data-table>
       </v-card>
     </v-container>
-  </v-col>
 </template>
 <script>
 import { mapState } from "vuex";
@@ -211,7 +209,7 @@ export default {
 };
 </script>
 <style>
-.v-data-table-footer {
+/* .v-data-table-footer {
   display: None;
-}
+} */
 </style>

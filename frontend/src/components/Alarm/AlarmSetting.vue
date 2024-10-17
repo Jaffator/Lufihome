@@ -9,13 +9,12 @@
       <v-toolbar-title>Alarm settings</v-toolbar-title>
       <v-spacer></v-spacer>
     </v-toolbar>
-    <v-row no-gutters>
       <!--  -->
       <!--CARD AREA EDIT------------------------------------------------------------------------------------------------------------------->
       <!--  -->
-      <v-col cols="12" sm="4">
-        <v-container class="pa-1">
-          <v-card max-width="500">
+
+          <v-container class="pa-1">
+          <v-card max-width="550">
             <v-data-table :headers="headers" :items="areas" :sort-by="[{ key: 'AreaName', order: 'asc' }]">
               <template v-slot:top>
                 <v-toolbar flat color="indigo-darken-4">
@@ -36,7 +35,7 @@
                             <v-text-field v-model="AreaName" label="Area name"></v-text-field>
                           </v-col>
                           <v-row v-for="(item, index) in sensors" class="mb-n10" no-gutters>
-                            <v-col cols="4">
+                            <v-col cols="6">
                               <v-checkbox :model-value="item.use" :label="item.Name" @click="useSensor(index)"></v-checkbox>
                             </v-col>
                           </v-row>
@@ -73,15 +72,19 @@
             </v-data-table>
           </v-card>
         </v-container>
-      </v-col>
-      <!--  -->
-      <!--CARD NIGHTMODE------------------------------------------------------------------------------------------------------------------->
-      <NightmodeSetting @refreshend="refreshData = false" :refreshNightmode="refreshData"></NightmodeSetting>
-      <SensorSetting @sensorRefresh="sensorRefresh()"></SensorSetting>
-      <OtherSetting></OtherSetting>
-      <Outputs></Outputs>
-    </v-row>
-    <v-spacer></v-spacer>
+
+
+          <NightmodeSetting @refreshend="refreshData = false" :refreshNightmode="refreshData"></NightmodeSetting>
+
+          <SensorSetting @sensorRefresh="sensorRefresh()"></SensorSetting>
+ 
+          <OtherSetting></OtherSetting>
+
+          <Outputs></Outputs>
+      
+   
+      
+    <!-- <v-spacer></v-spacer> -->
   </v-card>
 </template>
 <script>
@@ -286,7 +289,7 @@ export default {
 };
 </script>
 <style>
-.v-data-table-footer {
+/* .v-data-table-footer {
   display: None;
-}
+} */
 </style>
