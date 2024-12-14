@@ -24,7 +24,7 @@ system = Blueprint('system', __name__)
 def refresh_expiring_jwts(response):
     try:
         exp_timestamp = get_jwt()["exp"]
-        print(f'refresh token---system {exp_timestamp}')
+        # print(f'refresh token---system {exp_timestamp}')
         now = datetime.now(timezone.utc)
         target_timestamp = datetime.timestamp(now + timedelta(minutes=30))
         if target_timestamp > exp_timestamp:
@@ -32,12 +32,12 @@ def refresh_expiring_jwts(response):
             set_access_cookies(response, access_token)
         return response
     except (RuntimeError, KeyError):
-        print('token expire---system')
+        # print('token expire---system')
         # Case where there is not a valid JWT. Just return the original response
         return response
 
 
-@system.route('/pushSetting', methods=['GET', 'POST'])
+@system.route('/api/pushSetting', methods=['GET', 'POST'])
 @jwt_required()
 def pushSetting():
     arraySetting = []
@@ -60,7 +60,7 @@ def pushSetting():
     return str(result)
 
 
-@system.route('/gateSwitch', methods=['GET', 'POST'])
+@system.route('/api/gateSwitch', methods=['GET', 'POST'])
 @jwt_required()
 def gateSwitch():
     try:
@@ -71,7 +71,7 @@ def gateSwitch():
     return jsonify(result)
 
 
-@system.route('/system/deleteUnreadAlarmMsg', methods=['GET', 'POST'])
+@system.route('/api/system/deleteUnreadAlarmMsg', methods=['GET', 'POST'])
 @jwt_required()
 def deleteUnreadAlarmMsg():
     try:
@@ -83,7 +83,7 @@ def deleteUnreadAlarmMsg():
     return response, 200
 
 
-@system.route('/system/getUnreadAlarmMsg', methods=['GET', 'POST'])
+@system.route('/api/system/getUnreadAlarmMsg', methods=['GET', 'POST'])
 @jwt_required()
 def getUnreadAlarmMsg():
     try:
@@ -100,7 +100,7 @@ def getUnreadAlarmMsg():
                 dateslist.append(date["TimeStamp"])
             oldestMsgDate = str(min(dateslist))
             latestMsgDate = str(max(dateslist))
-        print(oldestMsgDate)
+        # print(oldestMsgDate)
         response = jsonify({'msgcount': numberUnreadAlarmMsg,
                            'latestDate': latestMsgDate, 'oldestDate': oldestMsgDate})
     except Exception as err:
@@ -109,7 +109,7 @@ def getUnreadAlarmMsg():
     return response, 200
 
 
-@system.route('/getSetting', methods=['GET', 'POST'])
+@system.route('/api/getSetting', methods=['GET', 'POST'])
 @jwt_required()
 def getSetting():
     arraySetting = []
@@ -127,7 +127,7 @@ def getSetting():
     return jsonify(result)
 
 
-@system.route('/deleteUser', methods=['GET', 'POST'])
+@system.route('/api/deleteUser', methods=['GET', 'POST'])
 @jwt_required()
 def deleteUser():
     try:
@@ -138,7 +138,7 @@ def deleteUser():
     return jsonify(result)
 
 
-@system.route('/updateUser', methods=['GET', 'POST'])
+@system.route('/api/updateUser', methods=['GET', 'POST'])
 @jwt_required()
 def updateUser():
     try:
@@ -151,7 +151,7 @@ def updateUser():
     return response, 200
 
 
-@system.route('/updateUserPass', methods=['GET', 'POST'])
+@system.route('/api/updateUserPass', methods=['GET', 'POST'])
 @jwt_required()
 def updateUserPass():
     passw = generate_password_hash(request.json['NewPass'])
@@ -164,7 +164,7 @@ def updateUserPass():
     return response, 200
 
 
-@system.route('/newUser', methods=['GET', 'POST'])
+@system.route('/api/newUser', methods=['GET', 'POST'])
 @jwt_required()
 def newUser():
     passw = generate_password_hash(request.json['Pass'])
@@ -178,7 +178,7 @@ def newUser():
     return response, 200
 
 
-@system.route('/useraccount', methods=['GET', 'POST'])
+@system.route('/api/useraccount', methods=['GET', 'POST'])
 @jwt_required()
 def useraccount():
     try:
@@ -191,7 +191,7 @@ def useraccount():
     return response, 200
 
 
-@system.route('/system/getLogs', methods=['GET', 'POST'])
+@system.route('/api/system/getLogs', methods=['GET', 'POST'])
 @jwt_required()
 def getLogs():
     try:
@@ -206,7 +206,7 @@ def getLogs():
     return response, 200
 
 
-@ system.route('/saveGateSensors', methods=['GET', 'POST'])
+@ system.route('/api/saveGateSensors', methods=['GET', 'POST'])
 @ jwt_required()
 def saveGateSensors():
     try:
@@ -218,7 +218,7 @@ def saveGateSensors():
     return jsonify(result)
 
 
-@ system.route('/getAllSetting', methods=['GET', 'POST'])
+@ system.route('/api/getAllSetting', methods=['GET', 'POST'])
 @ jwt_required()
 def getAllSetting():
     result = query.get_allSetting(True)
@@ -232,14 +232,14 @@ def reinit():
     return jsonify(True)
 
 
-@ system.route('/getSensorsState', methods=['GET', 'POST'])
+@ system.route('/api/getSensorsState', methods=['GET', 'POST'])
 @ jwt_required()
 def getSensorsState():
     result = AlarmFunctions.get_sensors_state()
     return jsonify(result)
 
 
-@ system.route('/getUsers', methods=['GET', 'POST'])
+@ system.route('/api/getUsers', methods=['GET', 'POST'])
 @ jwt_required()
 def getUsers():
     result = query.get_allUsers()
@@ -254,7 +254,7 @@ def getUsers():
 #     return jsonify(result)
 
 
-@ system.route('/setSetting', methods=['GET', 'POST'])
+@ system.route('/api/setSetting', methods=['GET', 'POST'])
 @ jwt_required()
 def setSetting():
     arraySetting = []
@@ -268,8 +268,10 @@ def setSetting():
         except:
             query.set_Setting(
                 request.json['settingName'], request.json['value'])
-        result = True
+
     except:
-        result = "Error when to write to DB"
-    result = True
-    return jsonify(result)
+        response = jsonify(True)
+        response.status_code = 400
+        return response
+    response = jsonify(True)
+    return response, 200

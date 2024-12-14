@@ -1,8 +1,6 @@
 import mariadb
 import sys
 import json
-import RPi.GPIO as GPIO
-from modules import errors
 # Connect to MariaDB Platform
 
 
@@ -39,7 +37,6 @@ def write_query(query, var):
 
 
 def read_query(query, usedict=False):
-    print(query)
     connection = connect_to_database()
     cursor = connection.cursor(dictionary=usedict)
     result = None

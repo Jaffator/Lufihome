@@ -32,7 +32,8 @@
 
           <v-btn @click="Login" class="mb-5 mt-5" color="blue" size="large" block>Log In</v-btn>
           <!-- <v-btn @click="Logout" class="mb-5 mt-5" color="red" size="large" variant="tonal" block>Logout</v-btn> -->
-          <!-- <v-btn @click="testJWT" class="mb-5 mt-5" color="green" size="large" variant="tonal" block>test JWT 1</v-btn> -->
+          <v-btn @click="testJWT" class="mb-5 mt-5" color="green" size="large" variant="tonal" block>test JWT</v-btn>
+          <v-btn @click="testJWT2" class="mb-5 mt-5" color="green" size="large" variant="tonal" block>test JWT 2</v-btn>
         </v-card>
       </v-slide-y-transition>
     </div>
@@ -88,6 +89,12 @@ export default {
     },
     async testJWT() {
       const response = await axios.get("/auth/checktoken", {}).catch((error) => {
+        console.log(error);
+      });
+      console.log(response);
+    },
+    async testJWT2() {
+      const response = await axios.get("/auth/gettest", {}).catch((error) => {
         console.log(error);
       });
       console.log(response);

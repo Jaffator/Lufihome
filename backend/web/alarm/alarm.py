@@ -20,7 +20,7 @@ from datetime import timezone
 alarm = Blueprint('alarm', __name__)
 
 
-@alarm.route('/updateAlarmSetting', methods=['GET', 'POST'])
+@alarm.route('/api/updateAlarmSetting', methods=['GET', 'POST'])
 @jwt_required()
 def updateAlarmSetting():
     try:
@@ -34,7 +34,7 @@ def updateAlarmSetting():
     return jsonify(result)
 
 
-@alarm.route('/updateAlarmOutput', methods=['GET', 'POST'])
+@alarm.route('/api/updateAlarmOutput', methods=['GET', 'POST'])
 @jwt_required()
 def updateAlarmOutput():
     try:
@@ -46,7 +46,7 @@ def updateAlarmOutput():
     return jsonify(result)
 
 
-@alarm.route('/deleteAlarmOutput', methods=['GET', 'POST'])
+@alarm.route('/api/deleteAlarmOutput', methods=['GET', 'POST'])
 @jwt_required()
 def deleteAlarmOutput():
     try:
@@ -57,7 +57,7 @@ def deleteAlarmOutput():
     return jsonify(result)
 
 
-@alarm.route('/newAlarmOutput', methods=['GET', 'POST'])
+@alarm.route('/api/newAlarmOutput', methods=['GET', 'POST'])
 @jwt_required()
 def newAlarmOutput():
     try:
@@ -69,7 +69,7 @@ def newAlarmOutput():
     return jsonify(result)
 
 
-@alarm.route('/getAlarmSetting', methods=['GET', 'POST'])
+@alarm.route('/api/getAlarmSetting', methods=['GET', 'POST'])
 @jwt_required()
 def getAlarmSetting():
     try:
@@ -83,7 +83,7 @@ def getAlarmSetting():
     return jsonify(result)
 
 
-@alarm.route('/getSensors', methods=['GET', 'POST'])
+@alarm.route('/api/getSensors', methods=['GET', 'POST'])
 @jwt_required()
 def getSensors():
     try:
@@ -93,7 +93,7 @@ def getSensors():
     return jsonify(result)
 
 
-@alarm.route('/updateSensor', methods=['GET', 'POST'])
+@alarm.route('/api/updateSensor', methods=['GET', 'POST'])
 @jwt_required()
 def updateSensor():
     try:
@@ -106,7 +106,7 @@ def updateSensor():
     return jsonify(result)
 
 
-@alarm.route('/deleteSensor', methods=['GET', 'POST'])
+@alarm.route('/api/deleteSensor', methods=['GET', 'POST'])
 @jwt_required()
 def deleteSensor():
     try:
@@ -118,7 +118,7 @@ def deleteSensor():
     return jsonify(result)
 
 
-@alarm.route('/newSensor', methods=['GET', 'POST'])
+@alarm.route('/api/newSensor', methods=['GET', 'POST'])
 @jwt_required()
 def newSensor():
     try:
@@ -132,7 +132,7 @@ def newSensor():
     return jsonify(result)
 
 
-@alarm.route('/deleteArea', methods=['GET', 'POST'])
+@alarm.route('/api/deleteArea', methods=['GET', 'POST'])
 @jwt_required()
 def deleteArea():
     try:
@@ -144,7 +144,7 @@ def deleteArea():
     return jsonify(result)
 
 
-@alarm.route('/getAlarmOutputs', methods=['GET', 'POST'])
+@alarm.route('/api/getAlarmOutputs', methods=['GET', 'POST'])
 @jwt_required()
 def getAlarmOutputs():
     try:
@@ -154,7 +154,7 @@ def getAlarmOutputs():
     return jsonify(result)
 
 
-@alarm.route('/newAreaDef', methods=['GET', 'POST'])
+@alarm.route('/api/newAreaDef', methods=['GET', 'POST'])
 @jwt_required()
 def newAreaDef():
     # try:
@@ -169,7 +169,7 @@ def newAreaDef():
     return jsonify(result)
 
 
-@alarm.route('/updateAreaDef', methods=['GET', 'POST'])
+@alarm.route('/api/updateAreaDef', methods=['GET', 'POST'])
 @jwt_required()
 def updateAreaDef():
     try:
@@ -186,7 +186,7 @@ def updateAreaDef():
     return jsonify(result)
 
 
-@alarm.route('/getAreaDef', methods=['GET', 'POST'])
+@alarm.route('/api/getAreaDef', methods=['GET', 'POST'])
 @jwt_required()
 def getAreaDef():
     areas = query.get_Areas()
@@ -211,7 +211,7 @@ def getAreaDef():
     return jsonify(resultAreaDef)
 
 
-@alarm.route('/deleteNightmodeArea', methods=['GET', 'POST'])
+@alarm.route('/api/deleteNightmodeArea', methods=['GET', 'POST'])
 @jwt_required()
 def deleteNightmodeArea():
     try:
@@ -223,7 +223,7 @@ def deleteNightmodeArea():
     return jsonify(result)
 
 
-@alarm.route('/updateNightmode', methods=['GET', 'POST'])
+@alarm.route('/api/updateNightmode', methods=['GET', 'POST'])
 @jwt_required()
 def updateNightmode():
     try:
@@ -237,7 +237,7 @@ def updateNightmode():
     return jsonify(result)
 
 
-@alarm.route('/getCode')
+@alarm.route('/api/getCode')
 @jwt_required()
 def getCode():
     passw = query.get_Setting('AlarmCode', True)[0]['Value']
@@ -245,7 +245,7 @@ def getCode():
     return jsonify(result)
 
 
-@alarm.route('/broad')
+@alarm.route('/api/broad')
 @jwt_required()
 def update():
     SocketIO_events.broadcast_updatedAreas()
@@ -253,7 +253,7 @@ def update():
     return jsonify(result)
 
 
-@alarm.route('/getNightmode')
+@alarm.route('/api/getNightmode')
 @jwt_required()
 def getNightmode():
     nightmodeAreas = query.get_Nightmode()
@@ -263,14 +263,14 @@ def getNightmode():
     return jsonify(nightmodeAreas)
 
 
-@alarm.route('/turnOffSirene', methods=['GET', 'POST'])
+@alarm.route('/api/turnOffSirene', methods=['GET', 'POST'])
 @jwt_required()
 def turnOffSirene():
     AlarmFunctions.alert = False
     return jsonify(True)
 
 
-@alarm.route('/disarm', methods=['GET', 'POST'])
+@alarm.route('/api/disarm', methods=['GET', 'POST'])
 @jwt_required()
 def disarm():
     print('disarm')
@@ -278,7 +278,7 @@ def disarm():
     return jsonify(True)
 
 
-@alarm.route('/startBeeping', methods=['GET', 'POST'])
+@alarm.route('/api/startBeeping', methods=['GET', 'POST'])
 @jwt_required()
 def startBeeping():
     try:
@@ -289,14 +289,14 @@ def startBeeping():
     return jsonify(result)
 
 
-@alarm.route('/getAreas', methods=['GET', 'POST'])
+@alarm.route('/api/getAreas', methods=['GET', 'POST'])
 @jwt_required()
 def getAreas():
     result = query.get_Areas()
     return jsonify(result)
 
 
-@alarm.route('/checkAlarmCode', methods=['GET', 'POST'])
+@alarm.route('/api/checkAlarmCode', methods=['GET', 'POST'])
 @jwt_required()
 def checkAlarmCode():
     alarmCodeDB = query.get_Setting('AlarmCode')[0]['Value']
@@ -305,7 +305,7 @@ def checkAlarmCode():
     return jsonify(result)
 
 
-@alarm.route('/updateAreas', methods=['GET', 'POST'])
+@alarm.route('/api/updateAreas', methods=['GET', 'POST'])
 @jwt_required()
 def updateAreas():
     areas = []
@@ -347,16 +347,16 @@ def updateAreas():
 @alarm.after_request
 def refresh_expiring_jwts(response):
     try:
-        print('refresh token---alarm')
+        # print('refresh token---alarm')
         exp_timestamp = get_jwt()["exp"]
         now = datetime.now(timezone.utc)
         target_timestamp = datetime.timestamp(now + timedelta(minutes=30))
         if target_timestamp > exp_timestamp:
-            print('get longer token--------------')
+            # print('get longer token--------------')
             access_token = create_access_token(identity=get_jwt_identity())
             set_access_cookies(response, access_token)
         return response
     except (RuntimeError, KeyError):
-        print('token expire---alarm')
+        # print('token expire---alarm')
         # Case where there is not a valid JWT. Just return the original response
         return response

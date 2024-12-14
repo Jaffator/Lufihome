@@ -1,0 +1,2 @@
+gunicorn -k geventwebsocket.gunicorn.workers.GeventWebSocketWorker --config gunicorn_config.py 'Main:app'
+fernet key: 'u7spEnQ4gwifMomLUFauAXs95mSIccU9DueNX1azKbc='

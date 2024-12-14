@@ -28,11 +28,12 @@ def authenticate(user, passw):
     return result
 
 
-@auth.route('/auth/login', methods=['GET', 'POST'])
+@auth.route('/api/auth/login', methods=['GET', 'POST'])
 def login():
     data = request.json
     password = data['password']
     username = data['username']
+    print(password, username)
     auth_result = authenticate(username, password)
     if auth_result == False:
         response = jsonify({"msg": "login not successful"})
@@ -45,14 +46,20 @@ def login():
     return response, 201
 
 
-@auth.route("/auth/logout", methods=["POST"])
+@auth.route("/api/auth/logout", methods=['GET', 'POST'])
 def logout():
     response = jsonify({"msg": "logout successful"})
     unset_jwt_cookies(response)
     return response
 
 
-@auth.route("/auth/checktoken", methods=["GET", "POST"])
+@auth.route("/api/auth/gettest", methods=['GET'])
+def gettest():
+    response = jsonify({"msg": "jwt ok"})
+    return response
+
+
+@auth.route("/api/auth/checktoken", methods=['GET'])
 @jwt_required()
 def checktoken():
     response = jsonify({"msg": "jwt ok"})

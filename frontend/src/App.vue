@@ -31,8 +31,10 @@ export default {
     ...mapState(["auth"]),
     isLoggedIn() {
       return this.auth.isLoggedIn;
+      // return false;
     },
     showLogin() {
+      // return true;
       return this.auth.showLogin;
     },
 

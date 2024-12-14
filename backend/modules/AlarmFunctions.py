@@ -21,8 +21,7 @@ def get_sensors_state():
     GPIO.setmode(GPIO.BCM)
     sensors = query.get_AllSensor()
     for sensor in sensors:
-        GPIO.setup(sensor['DigitalPin'], GPIO.IN,
-                   pull_up_down=GPIO.PUD_UP)
+        GPIO.setup(sensor['DigitalPin'], GPIO.IN,pull_up_down=GPIO.PUD_UP)
     for sensor in sensors:
         if GPIO.input(sensor['DigitalPin']) == 1:
             state = False

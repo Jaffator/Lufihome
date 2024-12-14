@@ -3,5 +3,7 @@
   "editor.formatOnSave": true,
   "[python]": {
     "editor.defaultFormatter": "ms-python.autopep8"
-  }
+  },
+  "editor.wordWrap": "off",
+  "editor.rulers": [180]
 }

@@ -1,57 +1,57 @@
 <template>
   <Dialog v-model="errorDialog" :dialogtext="errorDialogtext" :color="dialogColor"></Dialog>
-    <v-container class="pa-1">
-      <v-card max-width="550">
-        <v-data-table :headers="headers" :items="nightmodeAreas" :sort-by="[{ key: 'AreaName', order: 'asc' }]">
-          <template v-slot:top>
-            <v-toolbar color="indigo-darken-4">
-              <v-icon class="ml-3" icon="mdi mdi-weather-night"></v-icon>
-              <v-toolbar-title>Nightmode</v-toolbar-title>
-              <!--------------- New/Edit item dialog --------------->
-              <v-dialog v-model="dialog" max-width="500px">
-                <template v-slot:activator="{ props }">
-                  <v-btn color="grey-lighten-1" @click="addNightmode()" v-bind="props"> Add </v-btn>
-                </template>
-                <v-card>
-                  <v-card-title>
-                    <span class="text-h5">{{ formTitle }}</span>
-                  </v-card-title>
-                  <v-card-text>
-                    <v-container class="pa-0">
-                      <v-row v-for="(item, index) in areas" class="mb-n10" no-gutters>
-                        <v-col cols="10">
-                          <v-checkbox :model-value="item.use" :label="item.AreaName" @click="useArea(index)"></v-checkbox>
-                        </v-col>
-                      </v-row>
-                    </v-container>
-                  </v-card-text>
-                  <v-card-actions>
-                    <v-spacer></v-spacer>
-                    <v-btn color="blue-darken-1" variant="text" @click="close"> Cancel </v-btn>
-                    <v-btn color="blue-darken-1" variant="text" @click="save"> Save </v-btn>
-                  </v-card-actions>
-                </v-card>
-              </v-dialog>
-              <!--------------- Delete dialog --------------->
-              <v-dialog v-model="dialogDelete" max-width="500px">
-                <v-card>
-                  <v-card-title class="text-subtitle-2">Are you sure you want to delete this item?</v-card-title>
-                  <v-card-actions>
-                    <v-spacer></v-spacer>
-                    <v-btn color="blue-darken-1" variant="text" @click="closeDelete">Cancel</v-btn>
-                    <v-btn color="blue-darken-1" variant="text" @click="deleteItemConfirm">OK</v-btn>
-                    <v-spacer></v-spacer>
-                  </v-card-actions>
-                </v-card>
-              </v-dialog>
-            </v-toolbar>
-          </template>
-          <template v-slot:item.actions="{ item }">
-            <v-icon class="ml-8" size="small" @click="deleteItem(item)"> mdi-delete </v-icon>
-          </template>
-        </v-data-table>
-      </v-card>
-    </v-container>
+  <v-container class="pa-1">
+    <v-card max-width="550">
+      <v-data-table :headers="headers" :items="nightmodeAreas" :sort-by="[{ key: 'AreaName', order: 'asc' }]">
+        <template v-slot:top>
+          <v-toolbar color="indigo-darken-4">
+            <v-icon class="ml-3" icon="mdi mdi-weather-night"></v-icon>
+            <v-toolbar-title>Nightmode</v-toolbar-title>
+            <!--------------- New/Edit item dialog --------------->
+            <v-dialog v-model="dialog" max-width="500px">
+              <template v-slot:activator="{ props }">
+                <v-btn color="grey-lighten-1" @click="addNightmode()" v-bind="props"> Add </v-btn>
+              </template>
+              <v-card>
+                <v-card-title>
+                  <span class="text-h5">{{ formTitle }}</span>
+                </v-card-title>
+                <v-card-text>
+                  <v-container class="pa-0">
+                    <v-row v-for="(item, index) in areas" class="mb-n10" no-gutters>
+                      <v-col cols="10">
+                        <v-checkbox :model-value="item.use" :label="item.AreaName" @click="useArea(index)"></v-checkbox>
+                      </v-col>
+                    </v-row>
+                  </v-container>
+                </v-card-text>
+                <v-card-actions>
+                  <v-spacer></v-spacer>
+                  <v-btn color="blue-darken-1" variant="text" @click="close"> Cancel </v-btn>
+                  <v-btn color="blue-darken-1" variant="text" @click="save"> Save </v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-dialog>
+            <!--------------- Delete dialog --------------->
+            <v-dialog v-model="dialogDelete" max-width="500px">
+              <v-card>
+                <v-card-title class="text-subtitle-2">Are you sure you want to delete this item?</v-card-title>
+                <v-card-actions>
+                  <v-spacer></v-spacer>
+                  <v-btn color="blue-darken-1" variant="text" @click="closeDelete">Cancel</v-btn>
+                  <v-btn color="blue-darken-1" variant="text" @click="deleteItemConfirm">OK</v-btn>
+                  <v-spacer></v-spacer>
+                </v-card-actions>
+              </v-card>
+            </v-dialog>
+          </v-toolbar>
+        </template>
+        <template v-slot:item.actions="{ item }">
+          <v-icon class="ml-8" size="small" @click="deleteItem(item)"> mdi-delete </v-icon>
+        </template>
+      </v-data-table>
+    </v-card>
+  </v-container>
 </template>
 <script>
 import Dialog from "../../components/Dialog.vue";
@@ -139,7 +139,7 @@ export default {
     },
     getNightmode() {
       axios
-        .get("http://192.168.0.107:5000/getNightmode")
+        .get("/getNightmode")
         .then((response) => {
           this.nightmodeAreas = response.data;
         })
@@ -149,7 +149,7 @@ export default {
     },
     getAreas() {
       axios
-        .get("http://192.168.0.107:5000/getAreas")
+        .get("/getAreas")
         .then((response) => {
           this.areas = response.data;
           for (var key in this.areas) {
@@ -173,7 +173,7 @@ export default {
     },
     deleteItemConfirm() {
       axios
-        .post("http://192.168.0.107:5000/deleteNightmodeArea", { AreaID: this.AreaIDtoDelete })
+        .post("/deleteNightmodeArea", { AreaID: this.AreaIDtoDelete })
         .then((response) => {
           if (response.data == true) {
             this.getNightmode();
@@ -197,7 +197,7 @@ export default {
 
     save() {
       axios
-        .post("http://192.168.0.107:5000/updateNightmode", this.areas)
+        .post("/updateNightmode", this.areas)
         .then((response) => {
           if (response.data == true) {
             this.getNightmode();

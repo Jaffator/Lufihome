@@ -49,17 +49,19 @@ export default {
     checkToken({ commit }) {
       return new Promise((resolve, reject) => {
         axios
-          .post("/auth/checktoken")
+          .get("/auth/checktoken")
           .then((response) => {
             if (response.status == 200) {
               commit("changeLoggedStatus", true);
             } else {
               commit("changeLoggedStatus", false);
+              console.log(response);
             }
             resolve(response);
           })
           .catch((error) => {
             commit("changeLoggedStatus", false);
+            console.log(error);
             reject(error);
           });
       });

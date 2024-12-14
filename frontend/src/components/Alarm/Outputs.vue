@@ -3,61 +3,61 @@
   <Dialog v-model="errorDialog" :dialogtext="errorDialogtext" :color="dialogColor"></Dialog>
   <!--CARD AREA EDIT------------------------------------------------------------------------------------------------------------------->
   <!--  -->
-    <v-container class="pa-1">
-      <v-card max-width="550">
-        <v-data-table :headers="headers" :items="outputs" :sort-by="[{ key: 'Name', order: 'asc' }]">
-          <template v-slot:top>
-            <v-toolbar flat color="indigo-darken-4">
-              <v-icon class="ml-3" icon="mdi mdi-export"></v-icon>
-              <v-toolbar-title>Outputs</v-toolbar-title>
-              <!--------------- New/Edit item dialog --------------->
-              <v-dialog v-model="dialog" max-width="500px">
-                <template v-slot:activator="{ props }">
-                  <v-btn color="grey-lighten-1" @click="newOutput" v-bind="props">New Output</v-btn>
-                </template>
-                <v-card>
-                  <v-card-title>
-                    <span class="text-h5">{{ formTitle }}</span>
-                  </v-card-title>
-                  <v-card-text>
-                    <v-container class="pa-0">
-                      <v-col cols="12" md="8" sm="6">
-                        <v-text-field v-model="editedOutput.Name" label="Output name"></v-text-field>
-                      </v-col>
-                      <v-col cols="12" md="8" sm="6">
-                        <v-text-field v-model="editedOutput.DigitalPin" type="number" label="Digital pin"></v-text-field>
-                      </v-col>
-                    </v-container>
-                  </v-card-text>
-                  <v-card-actions>
-                    <v-spacer></v-spacer>
-                    <v-btn color="blue-darken-1" variant="text" @click="close"> Cancel </v-btn>
-                    <v-btn color="blue-darken-1" variant="text" @click="save(props)"> Save </v-btn>
-                  </v-card-actions>
-                </v-card>
-              </v-dialog>
-              <!--------------- Delete dialog --------------->
-              <v-dialog v-model="dialogDelete" max-width="500px">
-                <v-card>
-                  <v-card-title class="text-subtitle-2">Are you sure you want to delete this item?</v-card-title>
-                  <v-card-actions>
-                    <v-spacer></v-spacer>
-                    <v-btn color="blue-darken-1" variant="text" @click="closeDelete">Cancel</v-btn>
-                    <v-btn color="blue-darken-1" variant="text" @click="deleteItemConfirm">OK</v-btn>
-                    <v-spacer></v-spacer>
-                  </v-card-actions>
-                </v-card>
-              </v-dialog>
-            </v-toolbar>
-          </template>
-          <template v-slot:item.actions="{ item }">
-            <v-icon size="small" class="ml-2" @click="editItem(item)"> mdi-pencil </v-icon>
-            <v-icon size="small" class="ml-2" @click="deleteItem(item)"> mdi-delete </v-icon>
-          </template>
-          <template v-slot:no-data> </template>
-        </v-data-table>
-      </v-card>
-    </v-container>
+  <v-container class="pa-1">
+    <v-card max-width="550">
+      <v-data-table :headers="headers" :items="outputs" :sort-by="[{ key: 'Name', order: 'asc' }]">
+        <template v-slot:top>
+          <v-toolbar flat color="indigo-darken-4">
+            <v-icon class="ml-3" icon="mdi mdi-export"></v-icon>
+            <v-toolbar-title>Outputs</v-toolbar-title>
+            <!--------------- New/Edit item dialog --------------->
+            <v-dialog v-model="dialog" max-width="500px">
+              <template v-slot:activator="{ props }">
+                <v-btn color="grey-lighten-1" @click="newOutput" v-bind="props">New Output</v-btn>
+              </template>
+              <v-card>
+                <v-card-title>
+                  <span class="text-h5">{{ formTitle }}</span>
+                </v-card-title>
+                <v-card-text>
+                  <v-container class="pa-0">
+                    <v-col cols="12" md="8" sm="6">
+                      <v-text-field v-model="editedOutput.Name" label="Output name"></v-text-field>
+                    </v-col>
+                    <v-col cols="12" md="8" sm="6">
+                      <v-text-field v-model="editedOutput.DigitalPin" type="number" label="Digital pin"></v-text-field>
+                    </v-col>
+                  </v-container>
+                </v-card-text>
+                <v-card-actions>
+                  <v-spacer></v-spacer>
+                  <v-btn color="blue-darken-1" variant="text" @click="close"> Cancel </v-btn>
+                  <v-btn color="blue-darken-1" variant="text" @click="save(props)"> Save </v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-dialog>
+            <!--------------- Delete dialog --------------->
+            <v-dialog v-model="dialogDelete" max-width="500px">
+              <v-card>
+                <v-card-title class="text-subtitle-2">Are you sure you want to delete this item?</v-card-title>
+                <v-card-actions>
+                  <v-spacer></v-spacer>
+                  <v-btn color="blue-darken-1" variant="text" @click="closeDelete">Cancel</v-btn>
+                  <v-btn color="blue-darken-1" variant="text" @click="deleteItemConfirm">OK</v-btn>
+                  <v-spacer></v-spacer>
+                </v-card-actions>
+              </v-card>
+            </v-dialog>
+          </v-toolbar>
+        </template>
+        <template v-slot:item.actions="{ item }">
+          <v-icon size="small" class="ml-2" @click="editItem(item)"> mdi-pencil </v-icon>
+          <v-icon size="small" class="ml-2" @click="deleteItem(item)"> mdi-delete </v-icon>
+        </template>
+        <template v-slot:no-data> </template>
+      </v-data-table>
+    </v-card>
+  </v-container>
 </template>
 <script>
 import { mapState } from "vuex";
@@ -119,7 +119,7 @@ export default {
     },
     getAlarmOutputs() {
       axios
-        .get("http://192.168.0.107:5000/getAlarmOutputs")
+        .get("/getAlarmOutputs")
         .then((response) => {
           this.outputs = response.data;
         })
@@ -139,7 +139,7 @@ export default {
     },
     deleteItemConfirm() {
       axios
-        .post("http://192.168.0.107:5000/deleteAlarmOutput", { OutputID: this.OutputIDtoDelete })
+        .post("/deleteAlarmOutput", { OutputID: this.OutputIDtoDelete })
         .then((response) => {
           if (response.data == true) {
             this.getAlarmOutputs();
@@ -168,7 +168,7 @@ export default {
       if (this.formTitle == "Edit Output") {
         console.log(this.editedOutput);
         axios
-          .post("http://192.168.0.107:5000/updateAlarmOutput", this.editedOutput)
+          .post("/updateAlarmOutput", this.editedOutput)
           .then((response) => {
             if (response.data == true) {
               this.getAlarmOutputs();
@@ -187,7 +187,7 @@ export default {
           payload["Name"] = this.editedOutput.Name;
           payload["DigitalPin"] = this.editedOutput.DigitalPin;
           axios
-            .post("http://192.168.0.107:5000/newAlarmOutput", payload)
+            .post("/newAlarmOutput", payload)
             .then((response) => {
               if (response.data == true) {
                 this.getAlarmOutputs();

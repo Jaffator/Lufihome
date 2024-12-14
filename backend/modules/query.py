@@ -1,16 +1,9 @@
-import time
-from web import SocketIO_events
-import json
-from modules import database
-import datetime
+import database
+
 # -------------------------- write query --------------------------
-
-
-# def copy_Areas_to_actualSetting():
-#     database.write_query(
-#         "TRUNCATE TABLE ActualAreaSetting;")
-#     database.write_query(
-#         "REPLACE INTO ActualAreaSetting (AreaID) SELECT AreaID FROM Areas")
+def write_temp(sensorID: int, temp: float):
+    database.write_query(
+        "INSERT INTO TempLog (SensorID,Temperature) VALUES (%s, %s)", (sensorID, temp))
 
 
 def set_newArea(AreaName):
@@ -130,6 +123,10 @@ def set_Nightmode(AreaID):
 
 # -------------------------- read query --------------------------
 
+def get_last_temp(sensorID: int):
+    result = database.read_query(
+        "SELECT * FROM TempLog WHERE SensorID=%s ORDER BY DateTime DESC LIMIT 1;" % sensorID, True)
+    return result[0]
 
 def get_Nightmode():
     result = database.read_query(
@@ -316,6 +313,12 @@ def get_sensorID_by_name(name):
     result = database.read_query(
         """SELECT SensorID FROM Sensors Where Name = '%s';""" % name, None)
     return result[0][0]
+
+
+def get_sensor_by_type(type):
+    result = database.read_query(
+        """SELECT * FROM Sensors Where Type = '%s';""" % type, True)
+    return result
 
 
 def get_sensorsNames_AreasDefition(AreaName):

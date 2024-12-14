@@ -9,81 +9,78 @@
       <v-toolbar-title>Alarm settings</v-toolbar-title>
       <v-spacer></v-spacer>
     </v-toolbar>
-      <!--  -->
-      <!--CARD AREA EDIT------------------------------------------------------------------------------------------------------------------->
-      <!--  -->
+    <!--  -->
+    <!--CARD AREA EDIT------------------------------------------------------------------------------------------------------------------->
+    <!--  -->
 
-          <v-container class="pa-1">
-          <v-card max-width="550">
-            <v-data-table :headers="headers" :items="areas" :sort-by="[{ key: 'AreaName', order: 'asc' }]">
-              <template v-slot:top>
-                <v-toolbar flat color="indigo-darken-4">
-                  <v-icon class="ml-3" icon="mdi mdi-focus-field"></v-icon>
-                  <v-toolbar-title>Edit areas</v-toolbar-title>
-                  <!--------------- New/Edit item dialog --------------->
-                  <v-dialog v-model="dialog" max-width="500px">
-                    <template v-slot:activator="{ props }">
-                      <v-btn color="grey-lighten-1" @click="newArea()" v-bind="props"> new Area </v-btn>
-                    </template>
-                    <v-card>
-                      <v-card-title>
-                        <span class="text-h5">{{ formTitle }}</span>
-                      </v-card-title>
-                      <v-card-text>
-                        <v-container class="pa-0">
-                          <v-col cols="12" md="8" sm="6">
-                            <v-text-field v-model="AreaName" label="Area name"></v-text-field>
-                          </v-col>
-                          <v-row v-for="(item, index) in sensors" class="mb-n10" no-gutters>
-                            <v-col cols="6">
-                              <v-checkbox :model-value="item.use" :label="item.Name" @click="useSensor(index)"></v-checkbox>
-                            </v-col>
-                          </v-row>
-                        </v-container>
-                      </v-card-text>
-                      <v-card-actions>
-                        <v-spacer></v-spacer>
-                        <v-btn color="blue-darken-1" variant="text" @click="close"> Cancel </v-btn>
-                        <v-btn color="blue-darken-1" variant="text" @click="save()"> Save </v-btn>
-                      </v-card-actions>
-                    </v-card>
-                  </v-dialog>
-                  <!--------------- Delete dialog --------------->
-                  <v-dialog v-model="dialogDelete" max-width="500px">
-                    <v-card>
-                      <v-card-title class="text-subtitle-2">Are you sure you want to delete this item?</v-card-title>
-                      <v-card-actions>
-                        <v-spacer></v-spacer>
-                        <v-btn color="blue-darken-1" variant="text" @click="closeDelete">Cancel</v-btn>
-                        <v-btn color="blue-darken-1" variant="text" @click="deleteItemConfirm">OK</v-btn>
-                        <v-spacer></v-spacer>
-                      </v-card-actions>
-                    </v-card>
-                  </v-dialog>
-                </v-toolbar>
-              </template>
-              <template v-slot:item.actions="{ item }">
-                <v-icon size="small" class="ml-2" @click="editItem(item)"> mdi-pencil </v-icon>
-                <v-icon size="small" class="ml-2" @click="deleteItem(item)"> mdi-delete </v-icon>
-              </template>
-              <template v-slot:no-data>
-                <!-- <v-btn color="primary" @click="initialize"> Reset </v-btn> -->
-              </template>
-            </v-data-table>
-          </v-card>
-        </v-container>
+    <v-container class="pa-1">
+      <v-card max-width="550">
+        <v-data-table :headers="headers" :items="areas" :sort-by="[{ key: 'AreaName', order: 'asc' }]">
+          <template v-slot:top>
+            <v-toolbar flat color="indigo-darken-4">
+              <v-icon class="ml-3" icon="mdi mdi-focus-field"></v-icon>
+              <v-toolbar-title>Edit areas</v-toolbar-title>
+              <!--------------- New/Edit item dialog --------------->
+              <v-dialog v-model="dialog" max-width="500px">
+                <template v-slot:activator="{ props }">
+                  <v-btn color="grey-lighten-1" @click="newArea()" v-bind="props"> new Area </v-btn>
+                </template>
+                <v-card>
+                  <v-card-title>
+                    <span class="text-h5">{{ formTitle }}</span>
+                  </v-card-title>
+                  <v-card-text>
+                    <v-container class="pa-0">
+                      <v-col cols="12" md="8" sm="6">
+                        <v-text-field v-model="AreaName" label="Area name"></v-text-field>
+                      </v-col>
+                      <v-row v-for="(item, index) in sensors" class="mb-n10" no-gutters>
+                        <v-col cols="6">
+                          <v-checkbox :model-value="item.use" :label="item.Name" @click="useSensor(index)"></v-checkbox>
+                        </v-col>
+                      </v-row>
+                    </v-container>
+                  </v-card-text>
+                  <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn color="blue-darken-1" variant="text" @click="close"> Cancel </v-btn>
+                    <v-btn color="blue-darken-1" variant="text" @click="save()"> Save </v-btn>
+                  </v-card-actions>
+                </v-card>
+              </v-dialog>
+              <!--------------- Delete dialog --------------->
+              <v-dialog v-model="dialogDelete" max-width="500px">
+                <v-card>
+                  <v-card-title class="text-subtitle-2">Are you sure you want to delete this item?</v-card-title>
+                  <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn color="blue-darken-1" variant="text" @click="closeDelete">Cancel</v-btn>
+                    <v-btn color="blue-darken-1" variant="text" @click="deleteItemConfirm">OK</v-btn>
+                    <v-spacer></v-spacer>
+                  </v-card-actions>
+                </v-card>
+              </v-dialog>
+            </v-toolbar>
+          </template>
+          <template v-slot:item.actions="{ item }">
+            <v-icon size="small" class="ml-2" @click="editItem(item)"> mdi-pencil </v-icon>
+            <v-icon size="small" class="ml-2" @click="deleteItem(item)"> mdi-delete </v-icon>
+          </template>
+          <template v-slot:no-data>
+            <!-- <v-btn color="primary" @click="initialize"> Reset </v-btn> -->
+          </template>
+        </v-data-table>
+      </v-card>
+    </v-container>
 
+    <NightmodeSetting @refreshend="refreshData = false" :refreshNightmode="refreshData"></NightmodeSetting>
 
-          <NightmodeSetting @refreshend="refreshData = false" :refreshNightmode="refreshData"></NightmodeSetting>
+    <SensorSetting @sensorRefresh="sensorRefresh()"></SensorSetting>
 
-          <SensorSetting @sensorRefresh="sensorRefresh()"></SensorSetting>
- 
-          <OtherSetting></OtherSetting>
+    <OtherSetting></OtherSetting>
 
-          <Outputs></Outputs>
-      
-   
-      
+    <Outputs></Outputs>
+
     <!-- <v-spacer></v-spacer> -->
   </v-card>
 </template>
@@ -216,7 +213,7 @@ export default {
 
     deleteItemConfirm() {
       axios
-        .post("http://192.168.0.107:5000/deleteArea", { AreaID: this.AreaIDtoDelete })
+        .post("/deleteArea", { AreaID: this.AreaIDtoDelete })
         .then((response) => {
           if (response.data == true) {
             this.getAreaDef();
@@ -251,7 +248,7 @@ export default {
       if (this.formTitle == "Edit Area") {
         console.log(this.formTitle);
         axios
-          .post("http://192.168.0.107:5000/updateAreaDef", { AreaName: this.AreaName, AreaID: this.actualAreaID, Sensors: this.sensors })
+          .post("/updateAreaDef", { AreaName: this.AreaName, AreaID: this.actualAreaID, Sensors: this.sensors })
           .then((response) => {
             if (response.data == true) {
               this.getAreas();
@@ -268,7 +265,7 @@ export default {
       }
       if (this.formTitle == "New Area") {
         axios
-          .post("http://192.168.0.107:5000/newAreaDef", { AreaName: this.AreaName, Sensors: this.sensors })
+          .post("/newAreaDef", { AreaName: this.AreaName, Sensors: this.sensors })
           .then((response) => {
             if (response.data == true) {
               this.getAreas();
