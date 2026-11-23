@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+backend/bin/
+backend/lib/
+backend/include/
+backend/pyvenv.cfg
+
+# Secrets
+.env
+*.env
+!.env.example
+backend/modules/cipher.txt
+
+# Frontend
+node_modules/
+frontend/dist/
+
+# OS / editor
+.DS_Store
+Thumbs.db

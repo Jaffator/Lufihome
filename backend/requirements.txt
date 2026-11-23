@@ -1,0 +1,14 @@
+flask
+flask-cors
+flask-jwt-extended
+flask-restful
+flask-socketio
+gevent
+gevent-websocket
+gunicorn
+mariadb
+cryptography
+psutil
+pushbullet.py
+tuya-connector-python
+RPi.GPIO

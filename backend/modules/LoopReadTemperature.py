@@ -8,8 +8,8 @@ from classes import temperature
 
 def read_temp_thread():
     def init_temp_read():
-        with open('backend/modules/cipher.txt', 'r', encoding='utf-8') as file:
-            cipher = Fernet(file.read())
+        # key that decrypts the Tuya credentials stored in the database
+        cipher = Fernet(os.environ['FERNET_KEY'])
         try:
             type_temp = ['Tuya', 'DHT22']
             temp_sensors = []

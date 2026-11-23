@@ -3,6 +3,7 @@ from flask_socketio import SocketIO
 from flask_cors import CORS
 from flask_jwt_extended import JWTManager
 from datetime import timedelta
+import os
 # None, async_mode='eventlet', cors_allowed_origins="*", message_queue='redis://'
 
 socketio = SocketIO(None, cors_allowed_origins="*",
@@ -15,12 +16,13 @@ def create_app():
     # Initialize flask app
     app = Flask(__name__, static_folder=None)
     CORS(app, supports_credentials=True)
-    app.config['SECRET_KEY'] = 'secret!'
+    # Secrets come from the environment (see .env.example), never from the code
+    app.config['SECRET_KEY'] = os.environ['FLASK_SECRET_KEY']
     app.config["JWT_COOKIE_SECURE"] = False
     app.config["JWT_TOKEN_LOCATION"] = ["headers", "cookies"]
     app.config['JWT_ACCESS_CSRF_HEADER_NAME'] = "X-CSRF-TOKEN"
     app.config['JWT_CSRF_IN_COOKIES'] = True
-    app.config["JWT_SECRET_KEY"] = "super-secret"  # Change this in your code!
+    app.config["JWT_SECRET_KEY"] = os.environ['JWT_SECRET_KEY']
     app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(minutes=90)
     app.config['JWT_COOKIE_CSRF_PROTECT'] = True
     # app.config['JWT_ACCESS_COOKIE_PATH'] = '/'
