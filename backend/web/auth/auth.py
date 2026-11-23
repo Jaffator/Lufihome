@@ -33,7 +33,6 @@ def login():
     data = request.json
     password = data['password']
     username = data['username']
-    print(password, username)
     auth_result = authenticate(username, password)
     if auth_result == False:
         response = jsonify({"msg": "login not successful"})

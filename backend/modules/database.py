@@ -1,17 +1,18 @@
 import mariadb
 import sys
 import json
+import os
 # Connect to MariaDB Platform
 
 
 def connect_to_database():
     try:
         conn = mariadb.connect(
-            user="jaffa",
-            password="tanvald222",
-            host="localhost",
-            port=3306,
-            database="homedb"
+            user=os.environ['DB_USER'],
+            password=os.environ['DB_PASSWORD'],
+            host=os.environ.get('DB_HOST', 'localhost'),
+            port=int(os.environ.get('DB_PORT', '3306')),
+            database=os.environ.get('DB_NAME', 'homedb')
         )
         # print("MariaDB Database connection successful")
     except mariadb.Error as err:
